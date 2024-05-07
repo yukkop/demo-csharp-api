@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  prod-vpn-rest:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped 
+    image: rest-vpn
+    ports:
+      - "7047:80"
+    volumes:
+      - .:/app
+  test-vpn-rest:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    # depends_on:
+    #   prod-vpn-rest:
+    #     condition: service_healthy
+    restart: unless-stopped
+    image: rest-vpn
+    ports:
+      - "8048:80"
+    volumes:
+      - .:/app

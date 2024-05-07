@@ -1,0 +1,11 @@
+/WebApi/appsettings.*.json
+/WebApi/bin/
+/WebApi/obj/
+/Scheduler/appsettings.*.json
+publish/
+build/
+WebApi/bin/
+WebApi/obj/
+Scheduler/bin/
+Scheduler/obj/
+secrets.sh
